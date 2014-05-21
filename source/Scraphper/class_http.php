@@ -1,4 +1,7 @@
 <?php
+
+namespace Scraphper;
+
 /*
 * Filename.......: class_http.php
 * Author.........: Troy Wolf [troy@troywolf.com]

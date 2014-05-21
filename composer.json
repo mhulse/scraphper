@@ -1,0 +1,29 @@
+{
+  "name": "mhulse/scraphper",
+  "description": "PHP scraper I use from time-to-time; couldn't find the original source code anywhere useful.",
+  "keywords": [
+    "scraper"
+  ],
+  "homepage": "https://github.com/registerguard/scraphper",
+  "authors": [
+    {
+      "name": "Troy Wolf",
+      "email": "troy@troywolf.com",
+      "homepage": "http://troywolf.com/"
+    },
+    {
+      "name": "Micky Hulse",
+      "email": "m@mky.io",
+      "homepage": "http://mky.io/"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.3.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "HelloWorld": "source/"
+    }
+  }
+}
