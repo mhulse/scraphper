@@ -55,3 +55,4 @@ sitemap.xml.gz*~
 ####################
 
 composer.phar
+/vendor

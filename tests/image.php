@@ -15,10 +15,15 @@
 Include the http class. Modify path according to where you put the class
 file.
 */
-require_once(dirname(__FILE__).'/class_http.php');
 
-$h = new http();
+//require_once(dirname(__FILE__).'/class_http.php');
+// First run `$ php composer.phar install` to generate `/vendor` folder.
+require_once(__DIR__ . '/../vendor/autoload.php'); // Autoload files using Composer autoload.
+
+use Scraphper\Scrape;
+
+/* First, instantiate a new http object. */
+$h = new Scrape();
 $h->fetch($_GET['url'], $_GET['ttl'];);
 header("Content-Type: image/jpeg");
 echo $h->body;
-?>

@@ -17,13 +17,13 @@
       "homepage": "http://mky.io/"
     }
   ],
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "require": {
     "php": ">=5.3.0"
   },
   "autoload": {
     "psr-0": {
-      "HelloWorld": "source/"
+      "Scraphper": "src/"
     }
   }
 }

@@ -13,22 +13,25 @@
 Include the http class. Modify path according to where you put the class
 file.
 */
-require_once(dirname(__FILE__).'/class_http.php');
+//require_once(dirname(__FILE__).'/class_http.php');
+require_once __DIR__ . '/../vendor/autoload.php'; // Autoload files using Composer autoload.
+
+use Scraphper\Scrape;
 
 /* First, instantiate a new http object. */
-$h = new http();
+$h = new Scrape();
 
 /*
 Where do you want to store your cache files?
 Default is current dir. You can set it here, or hard-code in the class.
 You must end this value with a "/".
 */
-$h->dir = "/home/foo/bar/"; 
+$h->dir = "cache/"; 
 
 /*
 Screen-scrape the Google home page without caching.
 */
-if (!$h->fetch("http://www.google.com")) {
+if (!$h->fetch("https://www.google.com/")) {
   /*
   The class has a 'log' property that contains a log of events. This log is
   useful for testing and debugging.
@@ -58,7 +61,7 @@ class will use the cache. Otherwise, the source site will be scraped, and the
 local cache file will be updated. This makes your page faster and makes you a
 better neighbor to the external site.
 */
-$url = "http://moneycentral.msn.com/detail/stock_quote?Symbol=MSFT";
+$url = "http://investing.money.msn.com/investments/stock-price?Symbol=MSFT";
 if (!$h->fetch($url, 600)) {
   /*
   The class has a 'log' property that contains a log of events. This log is
@@ -115,7 +118,7 @@ This example builds on the previous example to extract the MSFT stats out
 of the body content. Read the comments in the class file to learn how to use
 this static method.
 */
-$msft_stats = http::table_into_array($h->body, "Avg Daily Volume", 1, null);
+$msft_stats = Scrape::table_into_array($h->body, "Avg Daily Volume", 1, null);
 
 /* Print out the array so you can see the stats data. */
 echo "<pre>";
@@ -127,35 +130,35 @@ echo "</pre>";
 Scraping content that is username/password protected. The class can do basic
 authentication. Pass your username and password in like this:
 */
-$url = "http://someprivatesite.net";
-$h->fetch($url, 0, null, "MyUserName","MyPassword");
+//$url = "http://someprivatesite.net";
+//$h->fetch($url, 0, null, "MyUserName","MyPassword");
 
 
 /*
 If your need to access content on a port other than 80, just put the port in
 the URL in the standard way:
 */
-$h->fetch("http://somedomain.org:8088");
+//$h->fetch("http://somedomain.org:8088");
 
 
 /*
-Example of using the image_cache.php companion script to cache images. Why not
+Example of using the image.php companion script to cache images. Why not
 just link directly to a neighbor's images? If your site has a lot of traffic,
 that's a lot of hits to your neighbor's site. So why not just copy their image
 to your own server? That's fine for images that do not change, but some sites
 create dynamic images such as stock charts that are generated new every minute.
-image_cache.php in conjunction with class_http.php makes it easy to directly
+image.php in conjunction with class_http.php makes it easy to directly
 link to third-party images and cache the image data for whatever ttl makes
 sense for your application.
 
 In this example, we will cache the chart image found at this moneycentral page:
 http://moneycentral.msn.com/investor/charts/chartdl.asp?FC=1&Symbol=MSFT&CA=1&CB=1&CC=1&CD=1&CP=0&PT=5
 You have to look at the page source code to find the url to their image. Then
-you url encode their image url, and pass it as a parameter to image_cache.php.
+you url encode their image url, and pass it as a parameter to image.php.
 */
 ?>
 
-<img src="image_cache.php?ttl=60&url=http%3A%2F%2Fdata.moneycentral.msn.com%2Fscripts%2Fchrtsrv.dll%3FSymbol%3DMSFT%26C1%3D0%26C2%3D1%26C9%3D2%26CA%3D1%26CB%3D1%26CC%3D1%26CD%3D1%26CF%3D0%26EFR%3D236%26EFG%3D246%26EFB%3D254%26E1%3D0" width="448" height="300" alt="Chart Graphic" />
+<img src="image.php?ttl=60&url=http%3A%2F%2Fdata.money.msn.com%2Fscripts%2Fchrtsrv.dll%3FSymbol%3DMSFT%26C1%3D0%26C2%3D1%26C9%3D2%26CA%3D1%26CB%3D1%26CC%3D1%26CD%3D1%26CF%3D0%26EFR%3D236%26EFG%3D246%26EFB%3D254%26E1%3D0" width="448" height="300" alt="Chart Graphic" />
 
 <?
 
