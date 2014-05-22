@@ -20,4 +20,4 @@ Using [Composer](https://getcomposer.org/doc/00-intro.md), …
 
 ### Attribution:
 
-Original code written by Troy Wolf. I've since put it on GitHub and slightly modified the code work with Composer.
+Original code written by Troy Wolf. I've since put it on [GitHub](https://github.com/mhulse/scraphper) and slightly modified the code work with [Composer](https://getcomposer.org/doc/00-intro.md).
