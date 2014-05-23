@@ -75,6 +75,6 @@ Please read the [CONTRIBUTING.md](https://github.com/mhulse/scraphper/blob/maste
 
 #### LEGAL
 
-Copyright © 2005 [Troy Wolf](http://troywolf.com)
+Copyright © 2005 [Troy Wolf](http://troywolf.com), © modifications by [Micky Hulse](http://mky.io) in 2014 (confusing, no?).
 
 <img width="20" height="20" align="absmiddle" src="https://github.global.ssl.fastly.net/images/icons/emoji/octocat.png" alt=":octocat:" title=":octocat:" class="emoji">
