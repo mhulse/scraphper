@@ -2,17 +2,17 @@
 
 **I needed a place to put a [PHP scraper I use from time-to-time](#attribution); I couldn't find the original source code anywhere useful, so I put it here.**
 
-### Features:
+## Features:
 
 * PHP screen-scraping class with caching (including images).
 * Includes static methods to extract data out of HTML tables into arrays or XML.
 * Supports sending XML requests and custom verbs with support for making WebDAV requests to Microsoft Exchange Server.
 
-### Attribution:
+## Attribution:
 
 Original code written by [Troy Wolf](http://troywolf.com). I've since put it on [GitHub](https://github.com/mhulse/scraphper) and slightly modified the code work with [Composer](https://getcomposer.org/doc/00-intro.md).
 
-### [Composer](https://getcomposer.org/doc/00-intro.md) installation:
+## [Composer](https://getcomposer.org/doc/00-intro.md) installation:
 
 Add Scraphper to your project's `composer.json`:
 
@@ -41,7 +41,7 @@ $h = new Scraphper\Scrape(); // Instantiate a new http object.
 
 See [`tests/index.php`](https://github.com/mhulse/scraphper/blob/master/tests/index.php) for more info.
 
-### Local development:
+## Local development:
 
 1. Clone to computer.
 1. Navigate to `$ cd scraphper/`.
@@ -51,7 +51,7 @@ See [`tests/index.php`](https://github.com/mhulse/scraphper/blob/master/tests/in
 
 **Note to future self:** When ready to release a new batch of changes, don’t forget to [draft a GitHub tag/release](https://github.com/mhulse/scraphper/releases).
 
-### Links:
+## Links:
 
 * [Creating your first Composer/Packagist package](http://grossi.io/2013/creating-your-first-composer-packagist-package/)
 
