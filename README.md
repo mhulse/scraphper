@@ -1,6 +1,6 @@
 # Scraphper!
 
-**I needed a place to put a [PHP scraper I use from time-to-time](https://github.com/mhulse/scraphper#attribution); I couldn't find the original source code anywhere useful, so I put it here.**
+**I needed a place to put a [PHP scraper I use from time-to-time](#attribution); I couldn't find the original source code anywhere useful, so I put it here.**
 
 ### Features:
 
