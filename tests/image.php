@@ -1,29 +1,23 @@
 <?php
-/*
-* Filename.......: image_cache.php
-* Author.........: Troy Wolf [troy@troywolf.com]
-* Last Modified..: Date: 2005/06/21 10:30:00
-* Description....: Companion script to clas_http.php. When used in conjunction
-                   with class_http.php, can be used to "screen-scrape" images
-                   and cache them locally for any number of seconds. You use
-                   this script in-line within img tags like so:
-<img src="image_cache.php?ttl=300&url=http%3A%2F%2Fwww.somedomain.com%2Fsomeimage.gif" />
-                  (You must url encode the url within the src attribute.)
-*/
+/**
+ * Scraphper\Scrape fetch() example usage.
+ *
+ * Used to "screen-scrape" images and cache them locally for any number of
+ * seconds. You use this script in-line within img tags like so:
+ *
+ * <img src="image.php?ttl=300&url=http%3A%2F%2Fwww.somedomain.com%2Fsomeimage.gif" />
+ * 
+ * You must url encode the url within the src attribute.
+ *
+ * @author Troy Wolf <troy@troywolf.com>
+ * @contributor Micky Hulse <m@mky.io>
+ * @modified 2005/06/21
+ */
 
-/*
-Include the http class. Modify path according to where you put the class
-file.
-*/
+require_once(__DIR__ . '/../vendor/autoload.php');
 
-//require_once(dirname(__FILE__).'/class_http.php');
-// First run `$ php composer.phar install` to generate `/vendor` folder.
-require_once(__DIR__ . '/../vendor/autoload.php'); // Autoload files using Composer autoload.
-
-use Scraphper\Scrape;
-
-/* First, instantiate a new http object. */
-$h = new Scrape();
-$h->fetch($_GET['url'], $_GET['ttl'];);
-header("Content-Type: image/jpeg");
-echo $h->body;
+$scraphper = new Scraphper\Scrape;
+$scraphper->dir = 'cache/';
+$scraphper->fetch($_GET['url'], $_GET['ttl']);
+header('Content-Type: image/jpg');
+echo $scraphper->body;
