@@ -61,7 +61,6 @@ class Scrape {
 	 *
 	 * Configure defaults.
 	 *
-	 * @access public
 	 * @return boolean
 	 */
 	
@@ -147,7 +146,7 @@ class Scrape {
 					
 					$need_to_save = TRUE;
 					
-					if ($this->getFromUrl()) return $this->saveToCache();
+					if ($this->getFromUrl($url)) return $this->saveToCache();
 					
 				} else {
 					
