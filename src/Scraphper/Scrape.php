@@ -11,6 +11,7 @@ namespace Scraphper;
  * 
  * @todo Convert log() output to pre-formatted plain text.
  * @todo Remove multiple exit points.
+ * @todo Figure out which member vars could be private.
  * @author Troy Wolf <troy@troywolf.com>
  * @author Micky Hulse <m@mky.io>
  * @modified 2014/05/21 by @mhulse
@@ -27,22 +28,17 @@ class Scrape {
 	public $status;
 	public $header;
 	public $log;
-	
-	//----------------------------------
-	// Private class variables:
-	//----------------------------------
-	
-	private $name;
-	private $filename;
-	private $url;
-	private $port;
-	private $verb;
-	private $ttl;
-	private $headers;
-	private $postvars;
-	private $xmlrequest;
-	private $connect_timeout;
-	private $data_ts;
+	public $filename;
+	public $name;
+	public $url;
+	public $port;
+	public $verb;
+	public $ttl;
+	public $headers;
+	public $postvars;
+	public $xmlrequest;
+	public $connect_timeout;
+	public $data_ts;
 	
 	//----------------------------------------------------------------------
 	
@@ -57,6 +53,8 @@ class Scrape {
 		$this->__construct();
 		
 	}
+	
+	//----------------------------------------------------------------------
 	
 	/**
 	 * Constructor.
@@ -135,7 +133,7 @@ class Scrape {
 			
 			if (strlen(trim($this->name)) == 0) $this->name = MD5($url);
 			
-			$this->filename = $this->dir . 'http_' . $this->name;
+			$this->filename = $this->dir . 'scraphper_' . $this->name;
 			$this->log .= 'Filename: ' . $this->filename . '<br>';
 			$this->getFile_ts();
 			
@@ -330,6 +328,8 @@ class Scrape {
 		
 	}
 	
+	//----------------------------------------------------------------------
+	
 	/**
 	 * Generic function to return xml dataset from HTML table data.
 	 *
@@ -511,6 +511,8 @@ class Scrape {
 		
 	}
 	
+	//----------------------------------------------------------------------
+	
 	/**
 	 * Reset the instance back to mostly new state.
 	 *
@@ -552,6 +554,8 @@ class Scrape {
 		
 	}
 	
+	//----------------------------------------------------------------------
+	
 	/**
 	 * Retrieve content from cache file.
 	 *
@@ -573,6 +577,8 @@ class Scrape {
 		return $fp;
 		
 	}
+	
+	//----------------------------------------------------------------------
 	
 	/**
 	 * Save content to cache file.
@@ -607,10 +613,12 @@ class Scrape {
 		
 	}
 	
+	//----------------------------------------------------------------------
+	
 	/**
 	 * Get cache file modified date.
 	 *
-	 * @return [type]
+	 * @return boolean
 	 */
 	
 	private function getFile_ts() {
@@ -629,5 +637,9 @@ class Scrape {
 		return TRUE;
 		
 	}
+	
+	//----------------------------------------------------------------------
+	
+	# See ya!
 	
 }
