@@ -65,10 +65,12 @@ Please read the [CONTRIBUTING.md](https://github.com/mhulse/scraphper/blob/maste
 
 ## Changelog
 
+* [v1.1.0 milestones](https://github.com/mhulse/scraphper/issues?direction=desc&milestone=2&page=1&sort=updated&state=closed)
 * [v1.0.0 milestones](https://github.com/mhulse/scraphper/issues?direction=desc&milestone=1&page=1&sort=updated&state=closed)
 
 ## [Release history](https://github.com/mhulse/scraphper/releases)
 
+* 2014-05-24   [v1.1.0](https://github.com/mhulse/scraphper/releases/tag/v1.1.0)   “Daily” fix.
 * 2014-05-23   [v1.0.0](https://github.com/mhulse/scraphper/releases/tag/v1.0.0)   Officially official.
 * 2014-05-22   [v0.1.0](https://github.com/mhulse/scraphper/releases/tag/v0.1.0)   Hello world!
 
