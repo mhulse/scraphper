@@ -16,8 +16,27 @@
 
 require_once(__DIR__ . '/../vendor/autoload.php');
 
+$url = (isset($_GET['url'])) ? $_GET['url'] : '';
+$ttl = (isset($_GET['ttl'])) ? $_GET['ttl'] : 0;
+
+$name = basename($url);
+$extension = strtolower(substr(strrchr($filename, '.'), 1));
+switch($extension) {
+	case 'gif':
+		$type = 'image/gif';
+		break;
+	case 'png':
+		$type = 'image/png';
+		break;
+	case ('jpeg' OR 'jpg'):
+		$type = 'image/jpg';
+		break;
+	default:
+		$type = 'image/jpg';
+}
+header('Content-Type: ' . $type);
+
 $scraphper = new Scraphper\Scrape;
 $scraphper->dir = 'cache/';
-$scraphper->fetch($_GET['url'], $_GET['ttl']);
-header('Content-Type: image/jpg');
+$scraphper->fetch($url, $ttl);
 echo $scraphper->body;
