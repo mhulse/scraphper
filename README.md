@@ -69,6 +69,7 @@ Please read the [CONTRIBUTING.md](https://github.com/mhulse/scraphper/blob/maste
 
 ## [Release history](https://github.com/mhulse/scraphper/releases)
 
+* 2014-05-23   [v1.0.0](https://github.com/mhulse/scraphper/releases/tag/v1.0.0)   Officially official.
 * 2014-05-22   [v0.1.0](https://github.com/mhulse/scraphper/releases/tag/v0.1.0)   Hello world!
 
 ---
